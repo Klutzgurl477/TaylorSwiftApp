@@ -1,5 +1,6 @@
 package com.example.music3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -31,7 +32,11 @@ class MainActivity : AppCompatActivity() {
             val topAlbums = getLastFmTopAlbums(artistName)
             // Log the parsed songs
             Log.d("MainActivity", "Parsed Songs: $topAlbums")
-            displayTopAlbums(topAlbums)
+
+            // Pass the album data to MenuActivity
+            val intent = Intent(this@MainActivity, MenuActivity::class.java)
+            intent.putExtra("ALBUM_DATA", topAlbums.toTypedArray())
+            startActivity(intent)
         }
     }
 
@@ -53,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         topAlbumsTextView.text = sb.toString()
     }
 }
+
 
 data class Track(
     val name: String,
