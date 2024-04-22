@@ -2,7 +2,6 @@ package com.example.music3
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -13,6 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,20 +55,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun displayTopAlbums(topAlbums: List<Album>) {
         Log.d("MainActivity", "displayTopAlbums()")
-        val topAlbumsTextView: TextView = findViewById(R.id.topAlbumsTextView)
-        val sb = StringBuilder()
-        for (album in topAlbums) {
-            sb.append("${album.name} by ${album.artist.name}\n")
-            // Log each album name
-            Log.d("MainActivity", "Album: ${album.name}")
+        val buttonIds = listOf(
+            R.id.button1, R.id.button2, R.id.button3, R.id.button4, R.id.button5,
+            R.id.button6, R.id.button7, R.id.button8, R.id.button9, R.id.button10
+        )
+
+        for ((index, album) in topAlbums.withIndex()) {
+            if (index >= buttonIds.size) break // Ensure we don't exceed the number of buttons
+            val button = findViewById<Button>(buttonIds[index])
+            button.text = "${album.name}"
         }
-        // Log before updating TextView
-        Log.d("MainActivity", "Before updating TextView")
-        Log.d("MainActivity", "Albums to display: $sb")
-        topAlbumsTextView.text = sb.toString()
     }
 }
-
 
 data class Track(
     val name: String,
