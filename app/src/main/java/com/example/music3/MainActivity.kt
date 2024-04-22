@@ -1,6 +1,5 @@
 package com.example.music3
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
@@ -21,22 +20,23 @@ class MainActivity : AppCompatActivity() {
     private val lastFmApiService = LastFmApiService()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("MainActivity", "oncreate()")
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // Example usage to get Taylor Swift's top albums asynchronously
         GlobalScope.launch(Dispatchers.Main) {
             val artistName = "Taylor Swift"
+            // Log before making the network request
+            Log.d("MainActivity", "Before network request")
             // Log the API link
             Log.d("MainActivity", "API Link: ${lastFmApiService.getTopAlbumsUrl(artistName, apiKey)}")
             val topAlbums = getLastFmTopAlbums(artistName)
+            Log.d("MainActivity", "after")
             // Log the parsed songs
             Log.d("MainActivity", "Parsed Songs: $topAlbums")
-
-            // Pass the album data to MenuActivity
-            val intent = Intent(this@MainActivity, MenuActivity::class.java)
-            intent.putExtra("ALBUM_DATA", topAlbums.toTypedArray())
-            startActivity(intent)
+            displayTopAlbums(topAlbums)
         }
     }
 
@@ -45,16 +45,26 @@ class MainActivity : AppCompatActivity() {
         val result = withContext(Dispatchers.IO) {
             lastFmApiService.getTopAlbums(apiKey, artistName)
         }
+        // Log after receiving the response
+        Log.d("MainActivity", "After receiving response")
+        // Log the response body
+        Log.d("MainActivity", "Response body: $result")
         Log.d("MainActivity", "getLastFmTopAlbums() end")
         return result
     }
 
     private fun displayTopAlbums(topAlbums: List<Album>) {
+        Log.d("MainActivity", "displayTopAlbums()")
         val topAlbumsTextView: TextView = findViewById(R.id.topAlbumsTextView)
         val sb = StringBuilder()
         for (album in topAlbums) {
-            sb.append("${album.name} by ${album.artist.name}\n") // Accessing album artist name
+            sb.append("${album.name} by ${album.artist.name}\n")
+            // Log each album name
+            Log.d("MainActivity", "Album: ${album.name}")
         }
+        // Log before updating TextView
+        Log.d("MainActivity", "Before updating TextView")
+        Log.d("MainActivity", "Albums to display: $sb")
         topAlbumsTextView.text = sb.toString()
     }
 }
@@ -89,8 +99,9 @@ class LastFmApiService {
 
         val response = service.getTopAlbums(artistName, apiKey)
         Log.d("MainActivity", "Response code: ${response.code()}")
-
+        Log.d("MainActivity", "response")
         if (response.isSuccessful) {
+            Log.d("MainActivity", "Response successful")
             val lastFmResponse = response.body()
             val albums = lastFmResponse?.topalbums?.album
             albums?.let {
@@ -105,6 +116,7 @@ class LastFmApiService {
     }
 
     fun getTopAlbumsUrl(artistName: String, apiKey: String): String {
+        Log.d("MainActivity", "getTopAlbumnsUrl()")
         return "https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=$artistName&api_key=$apiKey&format=json&limit=10"
     }
 }
@@ -114,6 +126,7 @@ interface LastFmService {
     suspend fun getTopAlbums(
         @Query("artist") artist: String,
         @Query("api_key") apiKey: String
+
     ): Response<LastFmResponse>
 }
 
