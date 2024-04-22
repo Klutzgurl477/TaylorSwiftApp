@@ -1,5 +1,6 @@
 package com.example.music3
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import android.widget.Button
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -64,6 +66,11 @@ class MainActivity : AppCompatActivity() {
             if (index >= buttonIds.size) break // Ensure we don't exceed the number of buttons
             val button = findViewById<Button>(buttonIds[index])
             button.text = "${album.name}"
+            button.setOnClickListener {
+                val intent = Intent(this@MainActivity, FactsActivity::class.java)
+                intent.putExtra("ALBUM_NAME", album.name)
+                startActivity(intent)
+            }
         }
     }
 }

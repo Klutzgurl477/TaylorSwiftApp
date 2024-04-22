@@ -8,7 +8,7 @@ class FactsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_facts)
+        setContentView(R.layout.activity_album_info)
 
         // Find the TextViews by their IDs
         val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
