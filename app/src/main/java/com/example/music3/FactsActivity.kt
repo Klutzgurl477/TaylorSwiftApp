@@ -1,6 +1,8 @@
 package com.example.music3
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView // Import TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,6 +11,18 @@ class FactsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_album_info)
+
+        // Find the back button by its ID
+        val buttonBack = findViewById<Button>(R.id.buttonBack)
+
+        // Set click listener for the back button
+        buttonBack.setOnClickListener {
+            // Create an intent to navigate back to MainActivity
+            val intent = Intent(this@FactsActivity, MainActivity::class.java)
+            startActivity(intent)
+            // Finish the current activity
+            finish()
+        }
 
         // Find the TextViews by their IDs
         val textViewTitle = findViewById<TextView>(R.id.textViewTitle)
