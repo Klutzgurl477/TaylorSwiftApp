@@ -6,11 +6,11 @@
 
     <!-- Linear layout for Album Name and Artist -->
     <LinearLayout
+        android:id="@+id/factsLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:id="@+id/factsLinearLayout"
         tools:context=".TaylorActivity">
 
         <TextView
@@ -21,77 +21,25 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/redlips"/>
 
         <TextView
             android:id="@+id/textViewFact1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Born in 1989"
+            android:text="Taylor Swift is a renowned singer-songwriter whose talent, authenticity, and evolution from country music to global pop stardom have made her an influential figure in the music industry. With her emotive lyrics, captivating voice, and dedication to artistic expression, Swift has garnered a massive following worldwide. Beyond her music, she's recognized for her advocacy, philanthropy, and cultural impact, solidifying her status as a beloved icon."
+            android:layout_marginBottom="10dp"
             android:textSize="18sp"/>
 
-        <TextView
-            android:id="@+id/textViewFact2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="11 Studio Albums"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3 rerecordings"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 4: Here's a fascinating fact."
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 5: Did you know...?"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 6: Another interesting fact."
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 7: This fact will blow your mind!"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 8: A surprising fact awaits."
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 9: Yet another incredible fact!"
-            android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/textViewFact10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fact 10: Last but not least, an amazing fact."
-            android:textSize="18sp"/>
+        <!-- ImageView for Album Cover -->
+        <ImageView
+            android:id="@+id/album_img_cover"
+            android:layout_width="314dp"
+            android:layout_height="358dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/taylor" />
 
     </LinearLayout>
 
@@ -104,6 +52,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp" />
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/redlips"/>
 
 </RelativeLayout>

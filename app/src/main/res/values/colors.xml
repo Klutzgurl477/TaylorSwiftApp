@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#800080</color>
     <color name="neutral"> #f6efeb	</color>
+    <color name="redlips">#bd332e</color>
     <!-- album colors -->
     <color name="c1989">#B5E5F8</color>
     <color name="d1989"> #BAC8D9 </color>
