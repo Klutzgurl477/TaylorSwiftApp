@@ -35,11 +35,13 @@ class FactsActivity : AppCompatActivity() {
         val release = arrayOf(2019, 2017, 2020, 2014, 2008, 2022, 2014, 2009, 2020)
         // Find the TextViewTitle by its ID
         val year = findViewById<TextView>(R.id.textViewReleaseYear)
-        // Find the corresponding TextView and set the text
+
+        // change the information depending on the album
         when (albumIndex) {
             0 -> {
                 Log.d("FactsActivity", "Lover")
                 year.text = "2019"
+                // change image here
             }
             1 -> {
                 Log.d("FactsActivity", "Reputation")
