@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -36,48 +37,61 @@ class FactsActivity : AppCompatActivity() {
         // Find the TextViewTitle by its ID
         val year = findViewById<TextView>(R.id.textViewReleaseYear)
 
+        //get the album image cover
+        val viewAlbumImageCover = findViewById<ImageView>(R.id.album_img_cover)
+
         // change the information depending on the album
         when (albumIndex) {
             0 -> {
                 Log.d("FactsActivity", "Lover")
                 year.text = "2019"
                 // change image here
+                viewAlbumImageCover.setImageResource(R.drawable.lover)
             }
             1 -> {
                 Log.d("FactsActivity", "Reputation")
                 year.text = "2017"
+                viewAlbumImageCover.setImageResource(R.drawable.reputation)
             }
             2 -> {
                 Log.d("FactsActivity", "FOLKLORE")
                 year.text = "2020"
+                viewAlbumImageCover.setImageResource(R.drawable.foklore)
             }
             3 -> {
                 Log.d("FactsActivity", "1989")
                 year.text = "2014"
+                viewAlbumImageCover.setImageResource(R.drawable._989)
             }
             4 -> {
                 Log.d("FactsActivity", "Fearless")
                 year.text = "2008"
+                viewAlbumImageCover.setImageResource(R.drawable.fearless)
             }
             5 -> {
                 Log.d("FactsActivity", "Midnights")
                 year.text = "2022"
+                viewAlbumImageCover.setImageResource(R.drawable.midnights)
             }
             6 -> {
                 Log.d("FactsActivity", "1989 (Deluxe)")
                 year.text = "2014"
+                viewAlbumImageCover.setImageResource(R.drawable._989_deluxe)
             }
             7 -> {
                 Log.d("FactsActivity", "Speak Now")
                 year.text = "2019"
+                viewAlbumImageCover.setImageResource(R.drawable.speak_now)
             }
             8 -> {
                 Log.d("FactsActivity", "Red (Taylor's Version)")
                 year.text = "2009"
+                viewAlbumImageCover.setImageResource(R.drawable.red)
             }
             9 -> {
                 Log.d("FactsActivity", "evermore")
                 year.text = "2020"
+                viewAlbumImageCover.setImageResource(R.drawable.evermore)
             }
         }
 
