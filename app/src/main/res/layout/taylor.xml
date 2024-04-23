@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Linear layout for Album Name and Artist -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:id="@+id/factsLinearLayout"
+        tools:context=".TaylorActivity">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taylor Swift"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewFact1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Born in 1989"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11 Studio Albums"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 rerecordings"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 4: Here's a fascinating fact."
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 5: Did you know...?"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 6: Another interesting fact."
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 7: This fact will blow your mind!"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 8: A surprising fact awaits."
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 9: Yet another incredible fact!"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewFact10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fact 10: Last but not least, an amazing fact."
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <!-- Back button -->
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp" />
+
+</RelativeLayout>

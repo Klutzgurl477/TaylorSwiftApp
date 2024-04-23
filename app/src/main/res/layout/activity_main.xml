@@ -7,6 +7,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/heading"
         android:layout_width="408dp"
@@ -18,6 +19,7 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:clickable="true"
         app:layout_constraintBottom_toTopOf="@id/button1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

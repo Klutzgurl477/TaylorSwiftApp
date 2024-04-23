@@ -14,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
             val topAlbums = getLastFmTopAlbums(artistName)
             Log.d("MainActivity", "Parsed Songs: $topAlbums")
             displayTopAlbums(topAlbums)
+        }
+
+        val textViewHeading = findViewById<TextView>(R.id.heading)
+        textViewHeading.setOnClickListener {
+            startActivity(Intent(this, TaylorActivity::class.java))
         }
     }
 
