@@ -30,28 +30,18 @@ class MainActivity : AppCompatActivity() {
         // Example usage to get Taylor Swift's top albums asynchronously
         GlobalScope.launch(Dispatchers.Main) {
             val artistName = "Taylor Swift"
-            // Log before making the network request
-            Log.d("MainActivity", "Before network request")
             // Log the API link
             Log.d("MainActivity", "API Link: ${lastFmApiService.getTopAlbumsUrl(artistName, apiKey)}")
             val topAlbums = getLastFmTopAlbums(artistName)
-            Log.d("MainActivity", "after")
-            // Log the parsed songs
             Log.d("MainActivity", "Parsed Songs: $topAlbums")
             displayTopAlbums(topAlbums)
         }
     }
 
     private suspend fun getLastFmTopAlbums(artistName: String): List<Album> {
-        Log.d("MainActivity", "getLastFmTopAlbums() start")
         val result = withContext(Dispatchers.IO) {
             lastFmApiService.getTopAlbums(apiKey, artistName)
         }
-        // Log after receiving the response
-        Log.d("MainActivity", "After receiving response")
-        // Log the response body
-        Log.d("MainActivity", "Response body: $result")
-        Log.d("MainActivity", "getLastFmTopAlbums() end")
         return result
     }
 
@@ -75,13 +65,6 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-data class Track(
-    val name: String,
-    val artist: String,
-    val duration: Int,
-    val url: String
-)
-
 class LastFmApiService {
 
     private val service: LastFmService
@@ -104,7 +87,6 @@ class LastFmApiService {
 
         val response = service.getTopAlbums(artistName, apiKey)
         Log.d("MainActivity", "Response code: ${response.code()}")
-        Log.d("MainActivity", "response")
         if (response.isSuccessful) {
             Log.d("MainActivity", "Response successful")
             val lastFmResponse = response.body()
