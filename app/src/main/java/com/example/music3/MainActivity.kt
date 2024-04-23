@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         for ((index, album) in topAlbums.withIndex()) {
-            if (index >= buttonIds.size) break // Ensure we don't exceed the number of buttons
+            if (index >= buttonIds.size) break
             val button = findViewById<Button>(buttonIds[index])
             button.text = "${album.name}"
             button.setOnClickListener {
@@ -69,6 +69,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+        // because folklore is spelled wrong in the API
+        findViewById<Button>(buttonIds[2]).text="folklore"
     }
 
 }
