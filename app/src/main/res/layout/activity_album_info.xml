@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Linear layout for the facts -->
+    <!-- Linear layout for Album Name and Artist -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,8 +21,25 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="8dp"/>
 
+    <TextView
+        android:id="@+id/textViewArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taylor Swift"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/textViewReleaseYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="release year"
+        android:textSize="17sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"/>
 
     <TextView
         android:id="@+id/textViewFact1"

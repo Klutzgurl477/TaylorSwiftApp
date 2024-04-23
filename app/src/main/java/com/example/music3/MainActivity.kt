@@ -59,10 +59,12 @@ class MainActivity : AppCompatActivity() {
             button.setOnClickListener {
                 val intent = Intent(this@MainActivity, FactsActivity::class.java)
                 intent.putExtra("ALBUM_NAME", album.name)
+                intent.putExtra("ALBUM_INDEX", index)
                 startActivity(intent)
             }
         }
     }
+
 }
 
 class LastFmApiService {
