@@ -3,4 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#800080</color>
+    <!-- album colors -->
+    <color name="c1989">#B5E5F8</color>
+    <color name="red">#7A2E39</color>
+    <color name="evermore"> #C5AC90</color>
+    <color name="lover">#F7B0CC</color>
+    <color name="fearless">#EFC180</color>
+    <color name="speaknow">#C7A8CB</color>
+    <color name="reputation">#746F70</color>
+    <color name="folklore">#CDC9C1</color>
 </resources>
